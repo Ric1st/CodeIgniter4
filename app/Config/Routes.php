@@ -13,3 +13,6 @@ $routes->get('logout', 'AuthController::logout');
 
 $routes->get('produk', 'ProdukController::index', ['filter' => 'auth']);
 $routes->get('keranjang', 'TransaksiController::index', ['filter' => 'auth']);
+
+$routes->get('faq', 'home::faq', ['filter' => 'auth']);
+$routes->get('profil', 'profilController::index', ['filter' => 'auth']);

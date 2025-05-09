@@ -13,19 +13,25 @@ class AuthController extends BaseController
     }
     public function login()
     {
+        $session = session();
         if ($this->request->getPost()) {
             $username = $this->request->getVar('username');
             $password = $this->request->getVar('password');
+            $waktuLogin =  date('Y-m-d H:i:s');
 
-            $dataUser = ['username' => 'april', 'password' => '202cb962ac59075b964b07152d234b70', 'role' => 'admin']; // passw 123
+            $dataUser = ['username' => 'danny', 'password' => '202cb962ac59075b964b07152d234b70', 'role' => 'admin', 'email' => 'rdannyoka@dsn.dinus.ac.id']; // passw 123
 
             if ($username == $dataUser['username']) {
                 if (md5($password) == $dataUser['password']) {
                     session()->set([
                         'username' => $dataUser['username'],
                         'role' => $dataUser['role'],
+                        'email' => $dataUser['email'],
+                        'waktuLogin' => $waktuLogin,
                         'isLoggedIn' => TRUE
                     ]);
+
+                    $session->setFlashdata('logged_in', true);
 
                     return redirect()->to(base_url('/'));
                 } else {
