@@ -26,21 +26,21 @@
                     <span>Produk</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link <?php echo (uri_string() == 'profil') ? "" : "collapsed" ?>" href="profil">
-                    <i class="bi bi-person-circle"></i>
-                    <span>Profil</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link <?php echo (uri_string() == 'faq') ? "" : "collapsed" ?>" href="faq">
-                    <i class="bi bi-question-circle"></i>
-                    <span>F.A.Q</span>
-                </a>
-            </li>
         <?php
         }
         ?>
+        <li class="nav-item">
+            <a class="nav-link <?php echo (uri_string() == 'profil') ? "" : "collapsed" ?>" href="profil">
+                <i class="bi bi-person-circle"></i>
+                <span>Profil</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link <?php echo (uri_string() == 'faq') ? "" : "collapsed" ?>" href="faq">
+                <i class="bi bi-question-circle"></i>
+                <span>F.A.Q</span>
+            </a>
+        </li>
     </ul>
 
 </aside><!-- End Sidebar-->
